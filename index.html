@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Membership Day Gift | Spin & Win</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    <div class="bg-particles" id="particles"></div>
+    <canvas id="ribbonCanvas"></canvas>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="logo-area">
+            <img src="assets/brand_logo.png" alt="Brand Logo" class="brand-logo">
+            <h1>Membership Day Gift</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+
+        <!-- Wheel Section -->
+
+        <!-- Wheel Section -->
+        <section class="wheel-section">
+            <div class="wheel-container">
+                <div class="wheel-pointer"></div>
+                <!-- Canvas for the wheel -->
+                <canvas id="spinWheel" width="500" height="500"></canvas>
+                <!-- Center Button / Decor -->
+                <div class="wheel-center">
+                    <div class="center-logo"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="spinBtn" class="premium-btn">
+                    <span class="btn-text">SPIN NOW</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Credit -->
+    <div class="footer-credit">
+        (Sheikh Rasel Robin) System V22.3
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="entryModal" class="modal">
+        <div class="modal-content glass-card">
+            <h2>স্বাগতম!</h2>
+            <p>স্পিন করতে আপনার তথ্য দিন</p>
+            <form id="entryForm">
+                <div class="input-group">
+                    <label>আপনার নাম</label>
+                    <input type="text" id="custName" required placeholder="নাম লিখুন">
+                </div>
+                <div class="input-group">
+                    <label>মেম্বারশিপ আইডি</label>
+                    <input type="text" id="custId" required placeholder="ID: 12345">
+                </div>
+                <button type="submit" class="primary-btn">স্পিন শুরু করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Winner Modal -->
+    <div id="winnerModal" class="modal">
+        <div class="modal-content glass-card winner-card" style="position: relative;">
+            <button id="closeWinnerBtn" class="close-icon"
+                style="position: absolute; top: 15px; right: 15px;">&times;</button>
+            <div class="winner-icon" id="winnnerIcon">🎁</div>
+            <h2>অভিনন্দন! <span id="winnerNameDisplay"></span></h2>
+            <p>আপনি জিতেছেন:</p>
+            <h1 id="wonPrizeName" class="gradient-text">Product Name</h1>
+            <p class="winner-note">দয়া করে কাউন্টার থেকে পুরস্কার সংগ্রহ করুন।</p>
+        </div>
+    </div>
+
+    <!-- Admin Panel (Hidden) -->
+    <div id="adminPanel" class="modal">
+        <div class="modal-content glass-card admin-card">
+            <div class="modal-header">
+                <h2>Admin Control Panel</h2>
+                <button id="closeAdmin" class="close-icon">&times;</button>
+            </div>
+
+            <div class="admin-grid">
+                <!-- Product 1 -->
+                <div class="product-edit">
+                    <h4>Product 1</h4>
+                    <input type="text" id="prod1Name" placeholder="Name">
+                    <input type="file" id="prod1Img" accept="image/*">
+                </div>
+                <!-- Product 2 -->
+                <div class="product-edit">
+                    <h4>Product 2</h4>
+                    <input type="text" id="prod2Name" placeholder="Name">
+                    <input type="file" id="prod2Img" accept="image/*">
+                </div>
+                <!-- Product 3 -->
+                <div class="product-edit">
+                    <h4>Product 3</h4>
+                    <input type="text" id="prod3Name" placeholder="Name">
+                    <input type="file" id="prod3Img" accept="image/*">
+                </div>
+                <!-- Product 4 -->
+                <div class="product-edit">
+                    <h4>Product 4</h4>
+                    <input type="text" id="prod4Name" placeholder="Name">
+                    <input type="file" id="prod4Img" accept="image/*">
+                </div>
+            </div>
+
+            <div class="admin-actions">
+                <button id="saveAdminChanges" class="primary-btn">Save Changes</button>
+                <button id="exportDataBtn" class="primary-btn" style="background-color: #28a745; color: white;">Download
+                    Excel</button>
+                <button id="resetDataBtn" class="danger-btn">Reset All Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content glass-card">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🙏</div>
+            <h2 id="msgTitle" style="color: var(--gold);">ধন্যবাদ!</h2>
+            <p id="msgBody" style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #fff;">
+                প্রিয় গ্রাহক, আপনি ইতিমধ্যে অংশগ্রহণ করেছেন।
+            </p>
+            <button id="msgCloseAction" class="primary-btn">ঠিক আছে</button>
+        </div>
+    </div>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
