@@ -1,0 +1,57 @@
+/* Custom Scrollbar for Webkit */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37; /* Brand Gold */
+}
+
+/* Base Styles */
+body {
+    background-color: #050505; /* Deep Black */
+}
+
+.text-brand-gold {
+    color: #D4AF37;
+}
+
+.bg-brand-gold {
+    background-color: #D4AF37;
+}
+
+.border-brand-gold {
+    border-color: #D4AF37;
+}
+
+/* Animations not covered by Tailwind/AOS */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Chart Tooltip Customization */
+#chartjs-tooltip {
+    opacity: 1;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 3px;
+    pointer-events: none;
+    transform: translate(-50%, 0);
+    transition: all .1s ease;
+}

@@ -1,156 +1,912 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Membership Day Gift | Spin & Win</title>
+    <title>Golden Basket Super Shop - Monthly Report Dec 2025</title>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#0f0f0f',
+                            darker: '#050505',
+                            card: '#1a1a1a',
+                            light: '#f5f5f5',
+                            gray: '#2a2a2a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="bg-brand-darker text-gray-200 font-sans antialiased overflow-x-hidden">
 
-    <!-- Background Elements -->
-    <div class="bg-gradient"></div>
-    <div class="bg-particles" id="particles"></div>
-    <canvas id="ribbonCanvas"></canvas>
-
-    <!-- Header -->
-    <header class="glass-header">
-        <div class="logo-area">
-            <img src="assets/brand_logo.png" alt="Brand Logo" class="brand-logo">
-            <h1>Membership Day Gift</h1>
+    <!-- Sidebar / Navigation -->
+    <nav
+        class="fixed top-0 left-0 h-full w-20 md:w-64 bg-brand-card border-r border-brand-gray z-50 transition-all duration-300 hidden lg:flex flex-col">
+        <div class="p-6 flex items-center justify-center border-b border-brand-gray h-52">
+            <img src="assets/logo.png" alt="Golden Basket Logo"
+                class="max-w-full max-h-44 object-contain hidden md:block transition-transform duration-300 hover:scale-105">
+            <img src="assets/logo.png" alt="Golden Basket Logo" class="max-w-full max-h-24 object-contain md:hidden">
         </div>
-    </header>
+
+        <ul class="flex-1 flex flex-col py-8 gap-2">
+            <li>
+                <a href="#hero"
+                    class="flex items-center gap-4 px-6 py-3 text-gray-400 hover:text-brand-gold hover:bg-brand-gray transition-colors border-l-4 border-transparent hover:border-brand-gold">
+                    <i class="fa-solid fa-home text-xl w-6"></i>
+                    <span class="hidden md:block font-medium">Overview</span>
+                </a>
+            </li>
+            <li>
+                <a href="#creative"
+                    class="flex items-center gap-4 px-6 py-3 text-gray-400 hover:text-brand-gold hover:bg-brand-gray transition-colors border-l-4 border-transparent hover:border-brand-gold">
+                    <i class="fa-solid fa-wand-magic-sparkles text-xl w-6"></i>
+                    <span class="hidden md:block font-medium">Creative Team</span>
+                </a>
+            </li>
+            <li>
+                <a href="#social"
+                    class="flex items-center gap-4 px-6 py-3 text-gray-400 hover:text-brand-gold hover:bg-brand-gray transition-colors border-l-4 border-transparent hover:border-brand-gold">
+                    <i class="fa-brands fa-facebook text-xl w-6"></i>
+                    <span class="hidden md:block font-medium">Social Media</span>
+                </a>
+            </li>
+            <li>
+                <a href="#delivery"
+                    class="flex items-center gap-4 px-6 py-3 text-gray-400 hover:text-brand-gold hover:bg-brand-gray transition-colors border-l-4 border-transparent hover:border-brand-gold">
+                    <i class="fa-solid fa-truck-fast text-xl w-6"></i>
+                    <span class="hidden md:block font-medium">Home Delivery</span>
+                </a>
+            </li>
+            <li>
+                <a href="ramadan-strategy.html"
+                    class="flex items-center gap-4 px-6 py-3 text-gray-400 hover:text-brand-gold hover:bg-brand-gray transition-colors border-l-4 border-transparent hover:border-brand-gold">
+                    <i class="fa-solid fa-moon text-xl w-6"></i>
+                    <span class="hidden md:block font-medium">Ramadan Strategy</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="p-6 border-t border-brand-gray">
+            <p class="text-xs text-gray-500 text-center">© 2025 Golden Basket</p>
+        </div>
+    </nav>
+
+    <!-- Mobile Header -->
+    <div
+        class="lg:hidden fixed top-0 w-full bg-brand-card z-50 border-b border-brand-gray px-4 py-3 flex justify-between items-center">
+        <div class="h-20">
+            <img src="assets/logo.png" alt="Golden Basket" class="h-full w-auto object-contain">
+        </div>
+        <button class="text-gray-300 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
 
     <!-- Main Content -->
-    <main class="main-container">
+    <main class="lg:ml-64 p-4 md:p-8 lg:p-12 pb-24">
 
-        <!-- Wheel Section -->
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-start relative mb-20"
+            data-aos="fade-up">
+            <div class="absolute top-0 right-0 p-8 opacity-20 pointer-events-none">
+                <i class="fa-solid fa-chart-pie text-9xl text-brand-gold"></i>
+            </div>
 
-        <!-- Wheel Section -->
-        <section class="wheel-section">
-            <div class="wheel-container">
-                <div class="wheel-pointer"></div>
-                <!-- Canvas for the wheel -->
-                <canvas id="spinWheel" width="500" height="500"></canvas>
-                <!-- Center Button / Decor -->
-                <div class="wheel-center">
-                    <div class="center-logo"></div>
+            <div
+                class="inline-block px-4 py-1 rounded-full border border-brand-gold text-brand-gold text-sm font-medium mb-6 animate-pulse">
+                Monthly Report &bull; Dec 2025 (Review) & Jan 2026 (Plan)
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
+                Driving Growth <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">Through
+                    Creativity</span>
+            </h1>
+
+            <p class="text-xl text-gray-400 max-w-2xl mb-12">
+                Comprehensive performance analysis for Creative, Social Media, and Sales departments.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
+                <div
+                    class="bg-brand-card p-6 rounded-xl border-l-4 border-brand-gold shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
+                    <p class="text-gray-500 text-sm mb-1">Prepared By</p>
+                    <h3 class="text-xl font-bold text-white">Monwar Joad</h3>
+                    <p class="text-brand-gold text-sm">Creative & Sales Team</p>
+                </div>
+                <div
+                    class="bg-brand-card p-6 rounded-xl border-l-4 border-brand-gold shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
+                    <p class="text-gray-500 text-sm mb-1">Prepared By</p>
+                    <h3 class="text-xl font-bold text-white">Sheikh Rasel Robin</h3>
+                    <p class="text-brand-gold text-sm">Creative & Sales Team</p>
                 </div>
             </div>
 
-            <div class="controls">
-                <button id="spinBtn" class="premium-btn">
-                    <span class="btn-text">SPIN NOW</span>
-                </button>
+            <!-- Scroll Down Indicator -->
+            <a href="#creative"
+                class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-brand-gold">
+                <i class="fa-solid fa-arrow-down text-2xl"></i>
+            </a>
+        </section>
+
+        <!-- Creative Team Section -->
+        <section id="creative" class="py-20" data-aos="fade-up">
+            <div class="flex items-end justify-between mb-10 border-b border-brand-gray pb-4">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                        <span class="text-brand-gold">01.</span> Creative Team
+                    </h2>
+                    <p class="text-gray-400">Content production vs Target for December</p>
+                </div>
+                <div class="hidden md:block text-right">
+                    <span class="text-4xl font-bold text-brand-gold counter" data-target="712">0</span>
+                    <p class="text-sm text-gray-400 uppercase tracking-widest">Total Image Posts</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Main Stats Cards -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Progress Item -->
+                    <div class="bg-brand-card p-6 rounded-xl">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Snacks Hour</span>
+                            <span class="text-brand-gold">19 / 19</span>
+                        </div>
+                        <div class="w-full bg-brand-gray rounded-full h-2.5">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
+                        </div>
+                        <p class="text-right text-xs text-gray-500 mt-1">100% Completed</p>
+                    </div>
+
+                    <div class="bg-brand-card p-6 rounded-xl">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Happy Hour</span>
+                            <span class="text-brand-gold">19 / 19</span>
+                        </div>
+                        <div class="w-full bg-brand-gray rounded-full h-2.5">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
+                        </div>
+                        <p class="text-right text-xs text-gray-500 mt-1">100% Completed</p>
+                    </div>
+
+                    <div class="bg-brand-card p-6 rounded-xl">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Weekly Offers</span>
+                            <span class="text-brand-gold">8 / 8</span>
+                        </div>
+                        <div class="w-full bg-brand-gray rounded-full h-2.5">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
+                        </div>
+                        <p class="text-right text-xs text-gray-500 mt-1">100% Completed</p>
+                    </div>
+                    <div class="bg-brand-card p-6 rounded-xl">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Monthly Offers</span>
+                            <span class="text-brand-gold">5 / 5</span>
+                        </div>
+                        <div class="w-full bg-brand-gray rounded-full h-2.5">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
+                        </div>
+                        <p class="text-right text-xs text-gray-500 mt-1">100% Completed</p>
+                    </div>
+                </div>
+
+                <!-- Highlight Cards -->
+                <div class="space-y-6">
+                    <div
+                        class="bg-gradient-to-br from-brand-card to-brand-gray p-8 rounded-xl border border-brand-gray flex flex-col items-center justify-center text-center h-full">
+                        <div
+                            class="w-32 h-32 rounded-full border-4 border-brand-gold flex items-center justify-center mb-4 relative">
+                            <span class="text-3xl font-bold text-white">141%</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Live Sessions</h3>
+                        <p class="text-gray-400 text-sm mb-4">Target: 17 | Done: 24</p>
+                        <span class="px-3 py-1 bg-brand-gold text-black font-bold text-xs rounded-full">Exceeded
+                            Target</span>
+                    </div>
+
+                    <div class="bg-brand-card p-6 rounded-xl border border-brand-gray text-center">
+                        <i class="fa-solid fa-video text-3xl text-blue-400 mb-2"></i>
+                        <h3 class="text-2xl font-bold text-white mb-1">18 / 18</h3>
+                        <p class="text-gray-400 text-sm">Videos Completed</p>
+                    </div>
+
+                    <div class="md:hidden bg-brand-card p-6 rounded-xl border border-brand-gray text-center">
+                        <i class="fa-solid fa-images text-3xl text-purple-400 mb-2"></i>
+                        <h3 class="text-2xl font-bold text-white mb-1 counter" data-target="712">0</h3>
+                        <p class="text-gray-400 text-sm">Total Image Posts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section id="social" class="py-20" data-aos="fade-up">
+            <div class="mb-10 border-b border-brand-gray pb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                    <span class="text-brand-gold">02.</span> Social Media
+                </h2>
+                <p class="text-gray-400">Performance Metrics for Facebook, YouTube & TikTok</p>
+            </div>
+
+            <!-- Overview Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-brand-card p-4 rounded-lg border-b-2 border-blue-500">
+                    <p class="text-gray-500 text-xs uppercase mb-1">FB Views (Dec)</p>
+                    <h3 class="text-2xl font-bold text-white">741k</h3>
+                    <p class="text-green-500 text-xs"><i class="fa-solid fa-arrow-up"></i> Stable</p>
+                </div>
+                <div class="bg-brand-card p-4 rounded-lg border-b-2 border-blue-500">
+                    <p class="text-gray-500 text-xs uppercase mb-1">FB Engagement</p>
+                    <h3 class="text-2xl font-bold text-white">37.5k</h3>
+                    <p class="text-green-500 text-xs"><i class="fa-solid fa-trophy"></i> Highest</p>
+                </div>
+                <div class="bg-brand-card p-4 rounded-lg border-b-2 border-red-500">
+                    <p class="text-gray-500 text-xs uppercase mb-1">YT Views (Dec)</p>
+                    <h3 class="text-2xl font-bold text-white">4.5k</h3>
+                    <p class="text-green-500 text-xs"><i class="fa-solid fa-trophy"></i> Highest</p>
+                </div>
+                <div class="bg-brand-card p-4 rounded-lg border-b-2 border-black">
+                    <p class="text-gray-500 text-xs uppercase mb-1">TikTok Views</p>
+                    <h3 class="text-2xl font-bold text-white">1,213</h3>
+                    <p class="text-gray-400 text-xs">Dec High</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Charts Area -->
+                <div class="lg:col-span-2 bg-brand-card p-6 rounded-xl border border-brand-gray">
+                    <h3 class="text-lg font-bold text-white mb-6">Facebook Views Trend (July - Dec)</h3>
+                    <div class="relative h-72 w-full">
+                        <canvas id="fbChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Ad Campaigns -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-white mb-4">Ad Campaign (Dec)</h3>
+
+                    <!-- Campaign 1 -->
+                    <div class="bg-brand-gray p-4 rounded-lg relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-brand-gold"></div>
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="font-bold text-white">BBQ Campaign</h4>
+                                <p class="text-xs text-gray-400">Goal: Visit Page</p>
+                            </div>
+                            <span class="text-brand-gold font-bold">$11.95</span>
+                        </div>
+                        <div class="flex justify-between text-sm mt-3">
+                            <span class="text-gray-300"><i class="fa-solid fa-eye mr-1"></i> 16,530</span>
+                            <span class="text-gray-300">Cost/View: Low</span>
+                        </div>
+                    </div>
+
+                    <!-- Campaign 2 -->
+                    <div class="bg-brand-gray p-4 rounded-lg relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="font-bold text-white">Engagement</h4>
+                                <p class="text-xs text-gray-400">Goal: Message</p>
+                            </div>
+                            <span class="text-blue-400 font-bold">$08.06</span>
+                        </div>
+                        <div class="flex justify-between text-sm mt-3">
+                            <span class="text-gray-300"><i class="fa-solid fa-eye mr-1"></i> 25,406</span>
+                            <span class="text-green-400"><i class="fa-solid fa-message mr-1"></i> 44 msgs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Social Media Tables -->
+            <div class="space-y-8 mt-8">
+
+                <!-- Facebook Report -->
+                <div class="bg-brand-card rounded-xl border border-brand-gray overflow-hidden">
+                    <div class="p-4 bg-brand-dark border-b border-brand-gray flex items-center justify-between">
+                        <h3 class="font-bold text-white flex items-center gap-2">
+                            <i class="fa-brands fa-facebook text-blue-500"></i> Facebook Monthly Report
+                        </h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-400">
+                            <thead class="bg-brand-gray/50 text-xs uppercase text-gray-200">
+                                <tr>
+                                    <th class="px-6 py-3">Month</th>
+                                    <th class="px-6 py-3">Views</th>
+                                    <th class="px-6 py-3">3s Views</th>
+                                    <th class="px-6 py-3">1m Views</th>
+                                    <th class="px-6 py-3">Engagement</th>
+                                    <th class="px-6 py-3">Message</th>
+                                    <th class="px-6 py-3">Follower</th>
+                                    <th class="px-6 py-3">Comment</th>
+                                    <th class="px-6 py-3">Response Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-brand-gray">
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">July</td>
+                                    <td class="px-6 py-4">586k</td>
+                                    <td class="px-6 py-4">128k</td>
+                                    <td class="px-6 py-4">16.3k</td>
+                                    <td class="px-6 py-4">31.1k</td>
+                                    <td class="px-6 py-4">46</td>
+                                    <td class="px-6 py-4">494</td>
+                                    <td class="px-6 py-4">796</td>
+                                    <td class="px-6 py-4 text-green-400">100%</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">August</td>
+                                    <td class="px-6 py-4">874k</td>
+                                    <td class="px-6 py-4">186k</td>
+                                    <td class="px-6 py-4">11.1k</td>
+                                    <td class="px-6 py-4">28.5k</td>
+                                    <td class="px-6 py-4">449</td>
+                                    <td class="px-6 py-4">477</td>
+                                    <td class="px-6 py-4">548</td>
+                                    <td class="px-6 py-4">76.37%</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">September</td>
+                                    <td class="px-6 py-4">701k</td>
+                                    <td class="px-6 py-4">161k</td>
+                                    <td class="px-6 py-4">11.3k</td>
+                                    <td class="px-6 py-4">34.3k</td>
+                                    <td class="px-6 py-4">333</td>
+                                    <td class="px-6 py-4">1096</td>
+                                    <td class="px-6 py-4">4604</td>
+                                    <td class="px-6 py-4">73.29%</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">October</td>
+                                    <td class="px-6 py-4">734k</td>
+                                    <td class="px-6 py-4">160k</td>
+                                    <td class="px-6 py-4">11.6k</td>
+                                    <td class="px-6 py-4">22.9k</td>
+                                    <td class="px-6 py-4">328</td>
+                                    <td class="px-6 py-4">289</td>
+                                    <td class="px-6 py-4">737</td>
+                                    <td class="px-6 py-4">82.64%</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">November</td>
+                                    <td class="px-6 py-4">763k</td>
+                                    <td class="px-6 py-4">151k</td>
+                                    <td class="px-6 py-4">13.1k</td>
+                                    <td class="px-6 py-4">29.5k</td>
+                                    <td class="px-6 py-4">306</td>
+                                    <td class="px-6 py-4">561</td>
+                                    <td class="px-6 py-4">888</td>
+                                    <td class="px-6 py-4">81.14%</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors bg-brand-gold/10">
+                                    <td class="px-6 py-4 font-bold text-brand-gold">December</td>
+                                    <td class="px-6 py-4 font-bold text-white">741k</td>
+                                    <td class="px-6 py-4">186k</td>
+                                    <td class="px-6 py-4 text-green-400">25.2k</td>
+                                    <td class="px-6 py-4 text-brand-gold">37.5k</td>
+                                    <td class="px-6 py-4">368</td>
+                                    <td class="px-6 py-4 text-brand-gold">1300</td>
+                                    <td class="px-6 py-4">855</td>
+                                    <td class="px-6 py-4">82.98%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- YouTube Report -->
+                    <div class="bg-brand-card rounded-xl border border-brand-gray overflow-hidden">
+                        <div class="p-4 bg-brand-dark border-b border-brand-gray flex items-center justify-between">
+                            <h3 class="font-bold text-white flex items-center gap-2">
+                                <i class="fa-brands fa-youtube text-red-500"></i> YouTube Monthly Report
+                            </h3>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-400">
+                                <thead class="bg-brand-gray/50 text-xs uppercase text-gray-200">
+                                    <tr>
+                                        <th class="px-4 py-3">Month</th>
+                                        <th class="px-4 py-3">Views</th>
+                                        <th class="px-4 py-3">Impression</th>
+                                        <th class="px-4 py-3">Avg View</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-brand-gray">
+                                    <tr>
+                                        <td class="px-4 py-2">July</td>
+                                        <td class="px-4 py-2">7</td>
+                                        <td class="px-4 py-2">91</td>
+                                        <td class="px-4 py-2">0.49</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">Aug</td>
+                                        <td class="px-4 py-2">665</td>
+                                        <td class="px-4 py-2">8.6k</td>
+                                        <td class="px-4 py-2">0.49</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">Sep</td>
+                                        <td class="px-4 py-2">802</td>
+                                        <td class="px-4 py-2">15.2k</td>
+                                        <td class="px-4 py-2">0.52</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">Oct</td>
+                                        <td class="px-4 py-2">2.3k</td>
+                                        <td class="px-4 py-2">18.6k</td>
+                                        <td class="px-4 py-2">0.51</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">Nov</td>
+                                        <td class="px-4 py-2">3.8k</td>
+                                        <td class="px-4 py-2">8.9k</td>
+                                        <td class="px-4 py-2">0.58</td>
+                                    </tr>
+                                    <tr class="bg-brand-gold/10 font-bold text-white">
+                                        <td class="px-4 py-2">Dec</td>
+                                        <td class="px-4 py-2">4.5k</td>
+                                        <td class="px-4 py-2">39.0k</td>
+                                        <td class="px-4 py-2 text-green-400">1.12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- TikTok Report -->
+                    <div class="bg-brand-card rounded-xl border border-brand-gray overflow-hidden">
+                        <div class="p-4 bg-brand-dark border-b border-brand-gray flex items-center justify-between">
+                            <h3 class="font-bold text-white flex items-center gap-2">
+                                <i class="fa-brands fa-tiktok text-white"></i> TikTok Report
+                            </h3>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-400">
+                                <thead class="bg-brand-gray/50 text-xs uppercase text-gray-200">
+                                    <tr>
+                                        <th class="px-4 py-3">Month</th>
+                                        <th class="px-4 py-3">Views</th>
+                                        <th class="px-4 py-3">Follower</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-brand-gray">
+                                    <tr>
+                                        <td class="px-4 py-2">Aug</td>
+                                        <td class="px-4 py-2">28</td>
+                                        <td class="px-4 py-2">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">Sep</td>
+                                        <td class="px-4 py-2">267</td>
+                                        <td class="px-4 py-2">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">Oct</td>
+                                        <td class="px-4 py-2">884</td>
+                                        <td class="px-4 py-2">11</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">Nov</td>
+                                        <td class="px-4 py-2">906</td>
+                                        <td class="px-4 py-2">-</td>
+                                    </tr>
+                                    <tr class="bg-brand-gold/10 font-bold text-white">
+                                        <td class="px-4 py-2">Dec</td>
+                                        <td class="px-4 py-2">1213</td>
+                                        <td class="px-4 py-2">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ad Campaign Report -->
+                <div class="bg-brand-card rounded-xl border border-brand-gray overflow-hidden">
+                    <div class="p-4 bg-brand-dark border-b border-brand-gray flex items-center justify-between">
+                        <h3 class="font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-bullhorn text-orange-500"></i> Ad Campaign Report
+                        </h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-400">
+                            <thead class="bg-brand-gray/50 text-xs uppercase text-gray-200">
+                                <tr>
+                                    <th class="px-6 py-3">Month</th>
+                                    <th class="px-6 py-3">Campaign</th>
+                                    <th class="px-6 py-3">Goal</th>
+                                    <th class="px-6 py-3">Cost ($)</th>
+                                    <th class="px-6 py-3">Views</th>
+                                    <th class="px-6 py-3">Message</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-brand-gray">
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">Oct</td>
+                                    <td class="px-6 py-4 text-white">MEGA YEARLY OFFER</td>
+                                    <td class="px-6 py-4">Video Views</td>
+                                    <td class="px-6 py-4">$12.21</td>
+                                    <td class="px-6 py-4">183,300</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">Oct</td>
+                                    <td class="px-6 py-4 text-white">HOME DELIVERY</td>
+                                    <td class="px-6 py-4">Visit Page</td>
+                                    <td class="px-6 py-4">$9.89</td>
+                                    <td class="px-6 py-4">46,283</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="bg-brand-gold/10 hover:bg-brand-gold/20 transition-colors">
+                                    <td class="px-6 py-4 text-brand-gold font-bold">Dec</td>
+                                    <td class="px-6 py-4 text-white font-bold">BBQ Campaign</td>
+                                    <td class="px-6 py-4">Visit Page</td>
+                                    <td class="px-6 py-4">$11.95</td>
+                                    <td class="px-6 py-4">16,530</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="bg-brand-gold/10 hover:bg-brand-gold/20 transition-colors">
+                                    <td class="px-6 py-4 text-brand-gold font-bold">Dec</td>
+                                    <td class="px-6 py-4 text-white font-bold">Engagement</td>
+                                    <td class="px-6 py-4">Message</td>
+                                    <td class="px-6 py-4">$08.06</td>
+                                    <td class="px-6 py-4">25,406</td>
+                                    <td class="px-6 py-4 text-green-400">44</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Home Delivery Section -->
+        <section id="delivery" class="py-20" data-aos="fade-up">
+            <div class="mb-10 border-b border-brand-gray pb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                    <span class="text-brand-gold">03.</span> Home Delivery
+                </h2>
+                <p class="text-gray-400">Financial Report & Sales Trend</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+                <!-- Financial Summary -->
+                <div class="bg-brand-card p-6 rounded-xl border-t-4 border-brand-gold relative overflow-hidden">
+                    <h3 class="text-gray-400 text-sm uppercase mb-2">Total Sales (Dec)</h3>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-3xl font-bold text-white">৳</span>
+                        <span class="text-4xl font-bold text-white counter" data-target="526044">0</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">Highest sales of the year</p>
+                </div>
+
+                <div class="bg-brand-card p-6 rounded-xl border-t-4 border-gray-600 relative overflow-hidden">
+                    <h3 class="text-gray-400 text-sm uppercase mb-2">Target Goal</h3>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-3xl font-bold text-gray-400">৳</span>
+                        <span class="text-4xl font-bold text-gray-400 counter" data-target="595249">0</span>
+                    </div>
+                    <p class="text-xs text-red-400 mt-2">Missed by ৳ 69,205</p>
+                </div>
+
+                <div
+                    class="bg-brand-card p-6 rounded-xl border border-brand-gray flex flex-col justify-center items-center">
+                    <!-- Donut Chart Canvas Container -->
+                    <div class="relative w-32 h-32">
+                        <canvas id="targetChart"></canvas>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-white">88%</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-2">Target Achievement</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Monthly Trend -->
+                <div class="bg-brand-card p-6 rounded-xl border border-brand-gray">
+                    <h3 class="text-lg font-bold text-white mb-6">Yearly Sales Trend (Jan - Dec)</h3>
+                    <div class="relative h-64 w-full">
+                        <canvas id="yearlySalesChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Daily Trend (Dec) -->
+                <!-- Daily Trend (Dec) -->
+                <div class="bg-brand-card p-6 rounded-xl border border-brand-gray">
+                    <h3 class="text-lg font-bold text-white mb-6">Daily Sales (December 1-31)</h3>
+                    <div class="relative h-64 w-full">
+                        <canvas id="dailySalesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Monthly Sales Table -->
+            <div class="mt-10">
+                <div class="bg-brand-card rounded-xl border border-brand-gray overflow-hidden">
+                    <div class="p-4 bg-brand-dark border-b border-brand-gray flex items-center justify-between">
+                        <h3 class="font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-list-ol text-brand-gold"></i> Monthly Sales Breakdown (Jan - Dec)
+                        </h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-400">
+                            <thead class="bg-brand-gray/50 text-xs uppercase text-gray-200">
+                                <tr>
+                                    <th class="px-6 py-3">Month</th>
+                                    <th class="px-6 py-3">Total Sale (Taka)</th>
+                                    <th class="px-6 py-3">Status/Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-brand-gray">
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">January</td>
+                                    <td class="px-6 py-4 font-bold text-white">3,21,629</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">February</td>
+                                    <td class="px-6 py-4 font-bold text-white">3,01,253</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">March</td>
+                                    <td class="px-6 py-4 font-bold text-white">2,21,625</td>
+                                    <td class="px-6 py-4 text-red-400">Lowest of Year</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">April</td>
+                                    <td class="px-6 py-4 font-bold text-white">2,42,799</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">May</td>
+                                    <td class="px-6 py-4 font-bold text-white">3,42,377</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">June</td>
+                                    <td class="px-6 py-4 font-bold text-white">2,27,222</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">July</td>
+                                    <td class="px-6 py-4 font-bold text-white">3,93,634</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">August</td>
+                                    <td class="px-6 py-4 font-bold text-white">4,37,893</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">September</td>
+                                    <td class="px-6 py-4 font-bold text-white">2,82,900</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">October</td>
+                                    <td class="px-6 py-4 font-bold text-white">4,56,219</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-brand-gray transition-colors">
+                                    <td class="px-6 py-4">November</td>
+                                    <td class="px-6 py-4 font-bold text-white">4,93,244</td>
+                                    <td class="px-6 py-4">-</td>
+                                </tr>
+                                <tr class="bg-brand-gold/10 hover:bg-brand-gold/20 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-brand-gold">December</td>
+                                    <td class="px-6 py-4 font-bold text-brand-gold text-lg">5,26,044</td>
+                                    <td class="px-6 py-4 text-green-400 font-bold">Highest of Year</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monthly Agenda Section (Jan 2026) -->
+        <section id="agenda" class="py-20" data-aos="fade-up">
+            <div class="mb-10 border-b border-brand-gray pb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                    <span class="text-brand-gold">04.</span> Monthly Agenda
+                </h2>
+                <p class="text-gray-400">Planning & Targets for January 2026</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Targets List -->
+                <div class="bg-brand-card p-8 rounded-xl border border-brand-gray h-full">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye text-brand-gold"></i>
+                        Target Goals (Jan 2026)
+                    </h3>
+
+                    <ul class="space-y-4">
+                        <li
+                            class="flex justify-between items-center bg-brand-gray/30 p-3 rounded-lg hover:bg-brand-gray transition-colors">
+                            <span class="text-gray-300">Snacks Hour</span>
+                            <span class="font-bold text-brand-gold">19 Posts</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center bg-brand-gray/30 p-3 rounded-lg hover:bg-brand-gray transition-colors">
+                            <span class="text-gray-300">Happy Hour</span>
+                            <span class="font-bold text-brand-gold">19 Posts</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center bg-brand-gray/30 p-3 rounded-lg hover:bg-brand-gray transition-colors">
+                            <span class="text-gray-300">Weekly Offers</span>
+                            <span class="font-bold text-brand-gold">8 Posts</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center bg-brand-gray/30 p-3 rounded-lg hover:bg-brand-gray transition-colors">
+                            <span class="text-gray-300">Monthly Offer</span>
+                            <span class="font-bold text-brand-gold">5 Posts</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center bg-brand-gray/30 p-3 rounded-lg hover:bg-brand-gray transition-colors">
+                            <span class="text-gray-300">Company Promotional</span>
+                            <span class="font-bold text-brand-gold">2 Posts</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center bg-brand-gray/30 p-3 rounded-lg hover:bg-brand-gray transition-colors">
+                            <span class="text-gray-300">Video Content</span>
+                            <span class="font-bold text-brand-gold">15 Posts</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center bg-brand-gray/30 p-3 rounded-lg hover:bg-brand-gray transition-colors">
+                            <span class="text-gray-300">Live Sessions</span>
+                            <span class="font-bold text-brand-gold">19 Sessions</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center bg-brand-gray/30 p-3 rounded-lg hover:bg-brand-gray transition-colors">
+                            <span class="text-gray-300">Daily Bazar</span>
+                            <span class="font-bold text-brand-gold">18 Posts</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center bg-brand-gray/30 p-3 rounded-lg hover:bg-brand-gray transition-colors">
+                            <span class="text-gray-300">Calendar Wise Work</span>
+                            <span class="font-bold text-green-400">Ongoing</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-6 p-4 bg-blue-900/20 border border-blue-900 rounded-lg">
+                        <p class="text-sm text-blue-200">
+                            <i class="fa-solid fa-info-circle mr-2"></i>
+                            <strong>Note:</strong> November 'Out of Box' work count was 6.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Requisitions & Notes -->
+                <div class="flex flex-col gap-6">
+                    <div class="bg-brand-card p-8 rounded-xl border border-brand-gray flex-1">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-clipboard-list text-red-400"></i>
+                            Requisitions (Pending)
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fa-regular fa-square text-gray-500"></i> Microphone Lapel
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fa-regular fa-square text-gray-500"></i> Phone Gimbal
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fa-regular fa-square text-gray-500"></i> Website/Apps Development
+                            </li>
+                        </ul>
+
+                        <div class="mt-8 pt-6 border-t border-brand-gray">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-brand-gold font-bold">Monthly Budget – Jan 2026</h4>
+                                <span class="text-xs px-2 py-1 bg-brand-gray rounded text-gray-400">Creative Team</span>
+                            </div>
+                            <div class="overflow-hidden rounded-lg border border-brand-gray">
+                                <table class="w-full text-xs text-left">
+                                    <thead class="bg-brand-gray/50 text-gray-300 uppercase">
+                                        <tr>
+                                            <th class="px-3 py-2">Subject</th>
+                                            <th class="px-3 py-2 text-right">USDT</th>
+                                            <th class="px-3 py-2 text-right">BDT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-brand-gray text-gray-400">
+                                        <tr>
+                                            <td class="px-3 py-2">Boosting</td>
+                                            <td class="px-3 py-2 text-right">80-100$</td>
+                                            <td class="px-3 py-2 text-right">10160-12700</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-3 py-2">Google drive</td>
+                                            <td class="px-3 py-2 text-right">-</td>
+                                            <td class="px-3 py-2 text-right">2400</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-3 py-2">CapCut</td>
+                                            <td class="px-3 py-2 text-right">-</td>
+                                            <td class="px-3 py-2 text-right">1200</td>
+                                        </tr>
+                                        <tr class="bg-brand-gold/5 text-white font-bold">
+                                            <td colspan="2" class="px-3 py-2">SUBTOTAL</td>
+                                            <td class="px-3 py-2 text-right text-brand-gold">16300</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="ramadan-strategy.html"
+                        class="group bg-gradient-to-r from-brand-gold to-yellow-600 p-8 rounded-xl text-brand-darker flex items-center justify-between hover:shadow-lg hover:shadow-brand-gold/20 transition-all">
+                        <div>
+                            <p class="font-bold text-sm uppercase opacity-80 mb-1">Strategic Roadmap</p>
+                            <h3 class="text-2xl font-bold">Ramadan & Eid<br>Campaign Plan</h3>
+                        </div>
+                        <i
+                            class="fa-solid fa-arrow-right text-3xl transform group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer Credit -->
-    <div class="footer-credit">
-        (Sheikh Rasel Robin) System V22.3
-    </div>
-
-    <!-- Registration Modal -->
-    <div id="entryModal" class="modal">
-        <div class="modal-content glass-card">
-            <h2>স্বাগতম!</h2>
-            <p>স্পিন করতে আপনার তথ্য দিন</p>
-            <form id="entryForm">
-                <div class="input-group">
-                    <label>আপনার নাম</label>
-                    <input type="text" id="custName" required placeholder="নাম লিখুন">
-                </div>
-                <div class="input-group">
-                    <label>মেম্বারশিপ আইডি</label>
-                    <input type="text" id="custId" required placeholder="ID: 12345">
-                </div>
-                <button type="submit" class="primary-btn">স্পিন শুরু করুন</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Winner Modal -->
-    <div id="winnerModal" class="modal">
-        <div class="modal-content glass-card winner-card" style="position: relative;">
-            <button id="closeWinnerBtn" class="close-icon"
-                style="position: absolute; top: 15px; right: 15px;">&times;</button>
-            <div class="winner-icon" id="winnnerIcon">🎁</div>
-            <h2>অভিনন্দন! <span id="winnerNameDisplay"></span></h2>
-            <p>আপনি জিতেছেন:</p>
-            <h1 id="wonPrizeName" class="gradient-text">Product Name</h1>
-            <p class="winner-note">দয়া করে কাউন্টার থেকে পুরস্কার সংগ্রহ করুন।</p>
-        </div>
-    </div>
-
-    <!-- Admin Panel (Hidden) -->
-    <div id="adminPanel" class="modal">
-        <div class="modal-content glass-card admin-card">
-            <div class="modal-header">
-                <h2>Admin Control Panel</h2>
-                <button id="closeAdmin" class="close-icon">&times;</button>
-            </div>
-
-            <div class="admin-grid">
-                <!-- Product 1 -->
-                <div class="product-edit">
-                    <h4>Product 1</h4>
-                    <input type="text" id="prod1Name" placeholder="Name">
-                    <input type="file" id="prod1Img" accept="image/*">
-                </div>
-                <!-- Product 2 -->
-                <div class="product-edit">
-                    <h4>Product 2</h4>
-                    <input type="text" id="prod2Name" placeholder="Name">
-                    <input type="file" id="prod2Img" accept="image/*">
-                </div>
-                <!-- Product 3 -->
-                <div class="product-edit">
-                    <h4>Product 3</h4>
-                    <input type="text" id="prod3Name" placeholder="Name">
-                    <input type="file" id="prod3Img" accept="image/*">
-                </div>
-                <!-- Product 4 -->
-                <div class="product-edit">
-                    <h4>Product 4</h4>
-                    <input type="text" id="prod4Name" placeholder="Name">
-                    <input type="file" id="prod4Img" accept="image/*">
-                </div>
-            </div>
-
-            <div class="admin-actions">
-                <button id="saveAdminChanges" class="primary-btn">Save Changes</button>
-                <button id="exportDataBtn" class="primary-btn" style="background-color: #28a745; color: white;">Download
-                    Excel</button>
-                <button id="resetDataBtn" class="danger-btn">Reset All Data</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Message Modal -->
-    <div id="messageModal" class="modal">
-        <div class="modal-content glass-card">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🙏</div>
-            <h2 id="msgTitle" style="color: var(--gold);">ধন্যবাদ!</h2>
-            <p id="msgBody" style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #fff;">
-                প্রিয় গ্রাহক, আপনি ইতিমধ্যে অংশগ্রহণ করেছেন।
+    <!-- Footer -->
+    <footer class="bg-brand-card border-t border-brand-gray py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-brand-gold font-bold mb-2">Golden Basket Super Shop</p>
+            <p class="text-gray-500 text-xs text-center font-mono">
+                Confidential Report &copy; 2025. Prepared by Sheikh Rasel Robin System V4.3
             </p>
-            <button id="msgCloseAction" class="primary-btn">ঠিক আছে</button>
         </div>
-    </div>
+    </footer>
 
-    <!-- Confetti Library -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="script.js"></script>
+
+    <!-- Scripts -->
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- CountUp.js (Simple implementation for no-dep) -->
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
